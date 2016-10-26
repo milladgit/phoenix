@@ -2,3 +2,4 @@
 ./examples/matrixMul
 ./examples/matrixMulDouble
 ./examples/*.o
+./examples/sample.csv
