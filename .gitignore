@@ -1,0 +1,4 @@
+*.o
+./examples/matrixMul
+./examples/matrixMulDouble
+./examples/*.o

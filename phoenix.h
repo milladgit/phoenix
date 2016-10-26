@@ -1,4 +1,14 @@
 
+/**
+ * Copyright 2016. 
+ * 
+ * Phoenix header file.
+ * 
+ * Developer: Millad Ghane, Oct. 20, 2016.
+ * 
+ */
+
+
 #ifndef __PHOENIX_H__
 #define __PHOENIX_H__
 
@@ -7,7 +17,6 @@
 #include <sys/types.h>
 #include <sys/shm.h>
 #include <errno.h>
-#include <semaphore.h>
 #include <fcntl.h>
 #include <signal.h>
 #include <sys/mman.h>
@@ -50,11 +59,11 @@
 
 
 #define PHOENIX_BUFSIZE 							128
-#define PHOENIX_MAX_SAMPLE  						(2048*2048)		// 4M samples
+#define PHOENIX_MAX_SAMPLE  						(1024*1024)		// 4M samples
 #define PHOENIX_MAX_REGION_NAME_LEN					64
 #define PHOENIX_MAX_SUPPORTED_REGIONS				32		/* Zero-based counter */
 
-#define PHOENIX_SAMPLE_FILENAME 					"sample.gpu"
+#define PHOENIX_SAMPLE_FILENAME 					"sample.csv"
 
 #define SAMPLE_TRANSFER_TO_FILE(filename)			{if(phoenix_sample_count >= PHOENIX_MAX_SAMPLE) {transfer_samples_to_file(filename);}}
 
@@ -353,12 +362,25 @@ void phoenix_region_start(int id, char *name) {
 		usleep(50);
 	}
 
+#ifdef PHOENIX_POWER_NVML_API
+#ifdef __NVCC__
+    cudaDeviceSynchronize();
+#endif
+#endif
+
 	__DEBUG_PRINT("PHONENIX --- REGION START - Done\n");
 }
 
 
 void phoenix_region_stop(int id, char *name) {
+
 	__DEBUG_PRINT("PHONENIX --- REGION STOP\n");
+
+#ifdef PHOENIX_POWER_NVML_API
+#ifdef __NVCC__
+    cudaDeviceSynchronize();
+#endif
+#endif
 
 	phoenix_stop_counter[id]++;
 
