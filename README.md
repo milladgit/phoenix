@@ -20,19 +20,19 @@ Not fully supported yet.
 
 
 ## How to use Phoenix?
-1. Include the header file, "phoenix.h".
+1- Include the header file, "phoenix.h".
 
 ```
 	#include "phoenix.h"
 ```
 
-2. In the main function, call following *function* once as one of your first few statements. It is used to initialize the Pheonix.
+2- In the main function, call following *function* once as one of your first few statements. It is used to initialize the Pheonix.
 
 ```
 	PHOENIX_INITIALIZE();
 ```
 
-3. Call following function right before the code region you are focusing on with a *region id* and *region name* to start collecting data on it. 
+3- Call following function right before the code region you are focusing on with a *region id* and *region name* to start collecting data on it. 
   * **Note:** Region id should not exceed *PHOENIX_MAX_SUPPORTED_REGIONS* as specified in the Phoenix header file. 
   * **Note 2:** They are mandatory and should be specified. However, you can specify their values based on your requirements. 
   * **Note 3:** *region_id* is an integer and *region_name* is a string.
@@ -45,7 +45,7 @@ Example:
 	PHOENIX_ENERGY_TIME_START(1, "region_compute");
 ```
 
-4. Call following function right after the code region you are focusing on with *the* region id and region name to stop collecting data on it. 
+4- Call following function right after the code region you are focusing on with *the* region id and region name to stop collecting data on it. 
 
 ```
 	PHOENIX_ENERGY_TIME_STOP(region_id, region_name);
@@ -56,9 +56,9 @@ Example:
 ```
 
 
-5. When program is finished, the results are available in a CSV fortmat in "sample.csv" file.
+5- When program is finished, the results are available in a CSV fortmat in "sample.csv" file.
 
-6. Please note: regions could not be nested! Currently, nested regions are not supported.
+6- Please note: regions could not be nested! Currently, nested regions are not supported.
 
 
 
