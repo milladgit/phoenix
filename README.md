@@ -68,7 +68,7 @@ Example:
 To compile with Phoenix, you need to compile your code with following flags:
 
 ```
-   nvcc ... * -DPHOENIX_POWER_NVML_API -I$(NVML_PATH) -I$(PHEONIX_PATH) * ...
+   nvcc ... -DPHOENIX_POWER_NVML_API -I$(NVML_PATH) -I$(PHEONIX_PATH) ...
 ```
 
 
@@ -76,7 +76,7 @@ To compile with Phoenix, you need to compile your code with following flags:
 And, you can link your code with following options on NVCC:
 
 ```
-   nvcc ... * -L/usr/local/cuda-7.5/lib64/ -lnvidia-ml -lm * ...
+   nvcc ... -L/usr/local/cuda-7.5/lib64/ -lnvidia-ml -lm ...
 ```
 
 
