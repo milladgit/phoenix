@@ -160,7 +160,6 @@ void *phoenix_control(void *) {
 		    continue;
 		}
 
-		printf("BITCHES...\n");
 		phoenix_control_in_sleep = 0;
 
 
