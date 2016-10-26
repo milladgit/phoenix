@@ -1,6 +1,8 @@
 # Phoenix
 Software-based power collection tool for NVIDIA and Intel architectures. 
 
+
+
 ## Options
 With Phoenix, one can retrieve power levels of NVIDIA GPUs with fine granularity.
 
@@ -98,19 +100,15 @@ phoenix_region_id,phoenix_region_name,counter,time_us,p_mw
 
 Details on the columns:
 
-### First and second column: 
-the region id and name of the piece of code that we are focusing on. 
+**First and second column: ** the region id and name of the piece of code that we are focusing on. 
 
-### Counter: 
-the visiting counter. Any specific region could be visited by our code multiple times. This column shows this phenomenon. For instance, for above data, it shows that region "region_compute" is visited twice. For the first time, 4 samples were collected. And for the second time, 3 samples were collected.
+**Counter: ** the visiting counter. Any specific region could be visited by our code multiple times. This column shows this phenomenon. For instance, for above data, it shows that region "region_compute" is visited twice. For the first time, 4 samples were collected. And for the second time, 3 samples were collected.
 
-### Time (micro second): 
-the timestamp in microsecond. It was extracted using *gettimeoftheday* method in C.
+**Time (micro second): ** the timestamp in microsecond. It was extracted using *gettimeoftheday* method in C.
 
-### Power (milli watts): 
-the power level at that timestamp collected from the GPU.
+**Power (milli watts): ** the power level at that timestamp collected from the GPU.
 
 
-
-**Hint:** By processing this file and integrating power over time, we can extract the consumed energy. By dividing the consumed energy to total execution time, average power consumption is computed. 
+## How to measure power?
+By processing this file and integrating power over time, we can extract the consumed energy. By dividing the consumed energy to total execution time, average power consumption is computed. 
 
