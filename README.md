@@ -1,5 +1,5 @@
 # Phoenix
-Software-based power collection tool for NVIDIA and Intel architectures. 
+Power collection tool for NVIDIA and Intel architectures. 
 
 
 
