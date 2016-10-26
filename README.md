@@ -29,33 +29,29 @@ Not fully supported yet.
 2. In the main function, call following *function* once as one of your first few statements. It is used to initialize the Pheonix.
 
 ```
-    PHOENIX_INITIALIZE();
+	PHOENIX_INITIALIZE();
 ```
 
 3. Call following function right before the code region you are focusing on with a *region id* and *region name* to start collecting data on it. 
-  a. **Note:** Region id should not exceed *PHOENIX_MAX_SUPPORTED_REGIONS* as specified in the Phoenix header file. 
-  b. **Note 2:** They are mandatory and should be specified. However, you can specify their values based on your requirements. 
-  c. **Note 3:** *region_id* is an integer and *region_name* is a string.
+  * **Note:** Region id should not exceed *PHOENIX_MAX_SUPPORTED_REGIONS* as specified in the Phoenix header file. 
+  * **Note 2:** They are mandatory and should be specified. However, you can specify their values based on your requirements. 
+  * **Note 3:** *region_id* is an integer and *region_name* is a string.
 
 ```
-    PHOENIX_ENERGY_TIME_START(region_id, region_name);
-```
+	PHOENIX_ENERGY_TIME_START(region_id, region_name);
 
 Example:
 
-```
-    PHOENIX_ENERGY_TIME_START(1, "region_compute");
+	PHOENIX_ENERGY_TIME_START(1, "region_compute");
 ```
 
 4. Call following function right after the code region you are focusing on with *the* region id and region name to stop collecting data on it. 
 
 ```
-    PHOENIX_ENERGY_TIME_STOP(region_id, region_name);
-```
+	PHOENIX_ENERGY_TIME_STOP(region_id, region_name);
 
 Example:
 
-```
 	PHOENIX_ENERGY_TIME_STOP(1, "region_compute");
 ```
 
