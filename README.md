@@ -35,7 +35,7 @@ Not fully supported yet.
 ```
 
 3- Call following function right before the code region you are focusing on with a *region id* and *region name* to start collecting data on it. 
-  * **Note:** Region id should not exceed *PHOENIX_MAX_SUPPORTED_REGIONS* as specified in the Phoenix header file. 
+  * **Note 1:** Region id should not exceed *PHOENIX_MAX_SUPPORTED_REGIONS* as specified in the Phoenix header file. 
   * **Note 2:** They are mandatory and should be specified. However, you can specify their values based on your requirements. 
   * **Note 3:** *region_id* is an integer and *region_name* is a string.
 
@@ -100,13 +100,13 @@ phoenix_region_id,phoenix_region_name,counter,time_us,p_mw
 
 Details on the columns:
 
-**First and second column: ** the region id and name of the piece of code that we are focusing on. 
+**First and second column:** the region id and name of the piece of code that we are focusing on. 
 
-**Counter: ** the visiting counter. Any specific region could be visited by our code multiple times. This column shows this phenomenon. For instance, for above data, it shows that region "region_compute" is visited twice. For the first time, 4 samples were collected. And for the second time, 3 samples were collected.
+**Counter:** the visiting counter. Any specific region could be visited by our code multiple times. This column shows this phenomenon. For instance, for above data, it shows that region "region_compute" is visited twice. For the first time, 4 samples were collected. And for the second time, 3 samples were collected.
 
-**Time (micro second): ** the timestamp in microsecond. It was extracted using *gettimeoftheday* method in C.
+**Time (micro second):** the timestamp in microsecond. It was extracted using *gettimeoftheday* method in C.
 
-**Power (milli watts): ** the power level at that timestamp collected from the GPU.
+**Power (milli watts):** the power level at that timestamp collected from the GPU.
 
 
 ## How to measure power?
