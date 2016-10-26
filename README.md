@@ -22,27 +22,42 @@ Exploiting power level using *nvidia-smi* tool. Instead of using NVML library, w
 ## How to use Phoenix?
 1. Include the header file, "phoenix.h".
 
+```
 	#include "phoenix.h"
+```
 
 2. In the main function, call following *function* once as one of your first few statements. It is used to initialize the Pheonix.
 
+```
     PHOENIX_INITIALIZE();
+```
 
-3. Call following function right before the code region you are focusing on with a *region id* and *region name* to start collecting data on it. **Note:** Region id should not exceed *PHOENIX_MAX_SUPPORTED_REGIONS* as specified in the Phoenix header file. **Note 2:** They are mandatory and should be specified. However, you can specify their values based on your requirements. **Note 3:** *region_id* is an integer and *region_name* is a string.
+3. Call following function right before the code region you are focusing on with a *region id* and *region name* to start collecting data on it. 
+  a. **Note:** Region id should not exceed *PHOENIX_MAX_SUPPORTED_REGIONS* as specified in the Phoenix header file. 
+  b. **Note 2:** They are mandatory and should be specified. However, you can specify their values based on your requirements. 
+  c. **Note 3:** *region_id* is an integer and *region_name* is a string.
 
+```
     PHOENIX_ENERGY_TIME_START(region_id, region_name);
+```
 
 Example:
 
+```
     PHOENIX_ENERGY_TIME_START(1, "region_compute");
+```
 
 4. Call following function right after the code region you are focusing on with *the* region id and region name to stop collecting data on it. 
 
+```
     PHOENIX_ENERGY_TIME_STOP(region_id, region_name);
+```
 
 Example:
 
+```
 	PHOENIX_ENERGY_TIME_STOP(1, "region_compute");
+```
 
 
 5. When program is finished, the results are available in a CSV fortmat in "sample.csv" file.
@@ -72,6 +87,7 @@ The output of Pheonix is saved in "sample.csv" file (unless the user changes it 
 
 Here is an example of it when using PHOENIX_POWER_NVML_API. Each line is a collected sample at different times. 
 
+```
 phoenix_region_id,phoenix_region_name,counter,time_us,p_mw
 1,region_compute,1,1477496381117441.000,109844.000
 1,region_compute,1,1477496381117778.000,109844.000
@@ -81,6 +97,7 @@ phoenix_region_id,phoenix_region_name,counter,time_us,p_mw
 1,region_compute,2,1477496381118777.000,109844.000
 1,region_compute,2,1477496381119117.000,109844.000
 ...
+```
 
 
 Details on the columns:
@@ -99,5 +116,5 @@ the power level at that timestamp collected from the GPU.
 
 
 
-By processing this file and integrating power over time, we can extract the consumed energy. By dividing the consumed energy to total execution time, average power consumption is computed. 
+**Hint:** By processing this file and integrating power over time, we can extract the consumed energy. By dividing the consumed energy to total execution time, average power consumption is computed. 
 
