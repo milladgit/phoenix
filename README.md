@@ -16,7 +16,7 @@ Enable using NVML library to collect power level. **Remember:** The path to head
 Exploiting power level using *nvidia-smi* tool. Instead of using NVML library, we can run *nvidia-smi* command and ask for power level. 
 
 **PHOENIX_POWER_RAPL_API**
-<Not fully supported yet.>
+Not fully supported yet.
 
 
 ## How to use Phoenix?
