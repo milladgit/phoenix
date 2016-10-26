@@ -6,16 +6,16 @@ With Phoenix, one can retrieve power levels of NVIDIA GPUs with fine granularity
 
 In order to use it, include "phoenix.h" file in your source code. Then, enabling following preprocessor variables will enable different parts of the code. You could do it on the compile time (using -D... flag) or by defining in your source code right before including the file.
 
-### DEBUG_MODE
+**DEBUG_MODE**
 Enables debug mode on some functions. It just prints out some debugging information.
 
-### PHOENIX_POWER_NVML_API
+**PHOENIX_POWER_NVML_API**
 Enable using NVML library to collect power level. **Remember:** The path to header file should be added to compile command during compilation time. 
 
-### PHOENIX_POWER_NVIDIA_SMI_TOOL
+**PHOENIX_POWER_NVIDIA_SMI_TOOL**
 Exploiting power level using *nvidia-smi* tool. Instead of using NVML library, we can run *nvidia-smi* command and ask for power level. 
 
-### PHOENIX_POWER_RAPL_API
+**PHOENIX_POWER_RAPL_API**
 <Not fully supported yet.>
 
 
