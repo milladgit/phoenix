@@ -81,7 +81,7 @@ And, you can link your code with following options on NVCC:
 
 
 ## Output format
-The output of Pheonix is saved in "sample.csv" file (unless the user changes it in the header file.)
+The output of Pheonix is saved as "sample.csv" file (unless the user changes it in the header file.)
 
 Here is an example of it when using PHOENIX_POWER_NVML_API. Each line is a collected sample at different times. 
 
