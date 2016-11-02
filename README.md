@@ -112,3 +112,11 @@ Details on the columns:
 ## How to measure power?
 By processing this file and integrating power over time, we can extract the consumed energy. By dividing the consumed energy to total execution time, average power consumption is computed. 
 
+## People
+Millad Ghane - University of Houston (Contact: mghane@cs.uh.edu)
+Sunita Chandrasekaran - University of Delaware (Contact: schandra@udel.edu)
+Margaret S. Cheung - University of Houston (Contact: mscheung@central.uh.edu)
+Larry Shi - University of Houston (Contact: wshi3@central.uh.edu)
+
+## Acknowledgments
+This project was supported by generous support of NSF (NSF: MCB 1412532, PHY-1427654, ACI: 1531814). 
