@@ -114,8 +114,11 @@ By processing this file and integrating power over time, we can extract the cons
 
 ## People
 Millad Ghane - University of Houston (Contact: mghane@cs.uh.edu)
+
 Sunita Chandrasekaran - University of Delaware (Contact: schandra@udel.edu)
+
 Margaret S. Cheung - University of Houston (Contact: mscheung@central.uh.edu)
+
 Larry Shi - University of Houston (Contact: wshi3@central.uh.edu)
 
 ## Acknowledgments
