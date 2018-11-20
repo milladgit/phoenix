@@ -68,7 +68,7 @@
 #define SAMPLE_TRANSFER_TO_FILE(filename)			{if(phoenix_sample_count >= PHOENIX_MAX_SAMPLE) {transfer_samples_to_file(filename);}}
 
 
-#define PHOENIX_GPU_SAMPLING_DELAY_IN_US 			1
+#define PHOENIX_GPU_SAMPLING_DELAY_IN_US 			2
 #define PHOENIX_CPU_SAMPLING_DELAY_IN_MS 			10
 
 
